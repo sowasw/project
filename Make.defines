@@ -1,0 +1,15 @@
+CC=g++
+
+OBJS=$(ROOT)obj/EventLoop.o	\
+	$(ROOT)obj/Log.o	\
+	$(ROOT)obj/TcpServer.o	\
+	$(ROOT)obj/Thread.o	\
+	$(ROOT)obj/wx_mysql.o	\
+	$(ROOT)obj/wx_redis.o   \
+	$(ROOT)obj/wx_lib.o     \
+	$(ROOT)obj/Protocol.o
+
+SRCPATH=$(ROOT)src/
+INCLUDEPATH = /usr/include/mysql
+INCLUDEOPTS = -I$(SRCPATH) -I$(INCLUDEPATH)
+LIBOPTS=-levent -levent_pthreads -lpthread -lmysqlclient -lhiredis
