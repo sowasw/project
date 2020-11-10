@@ -1,17 +1,19 @@
 运行此项目需要C++11以上，并安装Mysql，Redis，Libevent，Lua，在Make.defines文件中INCLUDEOPTS
 变量添加相应的头文件搜索路径
 
-src目录主要为：
+src目录主要为服务器主体代码：
 1.TcpServer类，底层为libevent，支持多线程，每个线程一个event_base事件循环，
 使用std::function和std::bind实现OnMessage接口
 2.异步日志类
 3.用类封装部分Mysql和Redis客户端API
 
-example目录用以上代码实现：
+projects目录用以上代码实现几个项目：
 1.echo服务器
 2.Mysql简易的命令行客户端
-3.Redis分布式锁，使用lua脚本实现
-4.一个简易的购物app，weBay，包括服务器端和测试客户端。服务端用Mysql为主数据库，Redis做缓存，
-实现了登录缓存，购物车，生成订单，定期清理缓存等几个业务逻辑。要运行此例子需要在weBayServer.conf
-文件中配置Mysql数据库服务器和Redis服务器，并在sql_scripts 目录下运行init_webay_db.sh初始化
-Mysql数据库
+3.Redis分布式锁，运行lua脚本实现
+
+4.一个购物app，weBay，包括服务器端和测试客户端。
+  服务端用Mysql为主数据库，Redis做缓存，
+  实现了登录缓存，购物车，生成订单，定期清理缓存等几个业务逻辑。
+  要运行此例子需要在weBayServer.conf文件中配置Mysql数据库服务器和Redis服务器，
+  并在sql_scripts 目录下运行init_webay_db.sh初始化Mysql数据库

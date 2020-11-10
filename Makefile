@@ -1,13 +1,13 @@
-exampledirs=example/echo-server example/mysql-client example/redis-test \
-	example/weBay
+projectsdirs=projects/echo-server projects/mysql-client projects/redis-test \
+	projects/weBay
 
 all:
-	for dir in $(exampledirs); do	\
+	for dir in $(projectsdirs); do	\
 		(cd $$dir && make)	\
 	done	
 	
 clean:
-	for dir in $(exampledirs); do	\
+	for dir in $(projectsdirs); do	\
 		(cd $$dir && make clean)	\
 	done
 	(cd obj && make clean)

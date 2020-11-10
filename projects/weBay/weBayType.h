@@ -9,7 +9,7 @@
 #define STAT_ERR    "err"
 */
 
-#define SESSION_LIMIT 2
+#define SESSION_LIMIT 3
 #define SESSION_MAX_ALIVE_SECOND 5 * 60 //会话最长有效时间
 #define TOCKEN_LEN 36
 
